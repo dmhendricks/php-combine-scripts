@@ -1,0 +1,25 @@
+# General
+__MACOSX
+**.DS_Store*
+ehthumbs.db
+Thumbs.db
+*~
+._*
+*.un~
+*.bak
+*.swp
+*.log
+.env
+.idea
+
+# Development
+*.phprj
+*.scssc
+vendor/
+yarn.lock
+composer.lock
+package-lock.json
+
+# VS Code
+launch.json
+*.code-workspace
