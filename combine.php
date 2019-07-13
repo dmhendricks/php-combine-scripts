@@ -65,9 +65,9 @@ foreach( $files as $file ) {
 if( !$disable_minify ) {
 
     $minifier = null;
-    if( $type = 'js' ) {
+    if( $type == 'js' ) {
         $minifier = new Minify\JS();
-    } else if( $type = 'css' ) {
+    } else if( $type == 'css' ) {
         $minifier = new Minify\CSS();
     }
 
