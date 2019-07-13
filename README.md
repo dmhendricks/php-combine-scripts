@@ -34,7 +34,7 @@ RewriteRule "^/minify/(.*)$" "/combine/index.php?minify=true&scripts=$1"
 
 For example, let's say that you set your `COMBINE_BASEDIR` to `/var/www/html/scipts/`. Withing this directory, you might have some JS or CSS libraries. We'll combine [Font Awesome](https://fontawesome.com/?utm_source=github.com&utm_medium=referral&utm_content=link&utm_campaign=php-combine-scripts) with the [v4 shims](https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4/?utm_source=github.com&utm_medium=referral&utm_content=link&utm_campaign=php-combine-scripts#shims) as an example, assuming that you have already [extracted them](https://github.com/FortAwesome/Font-Awesome/tree/master/css) to `/var/www/html/scipts/dist/css/`.
 
-To combine or minify Font Awesome 5 and the
+To combine or minify multiple scripts, separate them with commas:
 
 ```html
 <!-- Combine example -->
