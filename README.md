@@ -5,7 +5,7 @@
 
 # PHP Combine Scripts
 
-A simple PHP script to combine and minify multiple JS or CSS files passed via URI, inspired by [jsDelivr](https://www.jsdelivr.com/features#combine).
+A simple PHP script to combine and minify multiple JS or CSS files passed via URI, inspired by [jsDelivr](https://www.jsdelivr.com/features/?utm_source=github.com&utm_medium=campaign&utm_content=button&utm_campaign=php-combine-scripts#combine).
 
 ## Setup
 
@@ -27,5 +27,5 @@ rewrite ^/minify/(.*)$ /combine/index.php?minify=true&scripts=$1;
 ```apache
 # Rewrite combine/minify URLs
 RewriteRule "^/combine/(.*)$" "/combine/index.php?scripts=$1"
-RewriteRule "^/minify/(.*)$" "/combine/index.php?scripts=$1"
+RewriteRule "^/minify/(.*)$" "/combine/index.php?minify=true&scripts=$1"
 ```
