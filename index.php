@@ -2,19 +2,19 @@
 /**
  * Name:          Combine Scripts
  * Description:   A simple PHP script to combine script assets
- * Version:       0.1.0
+ * Version:       0.2.0
  * Author:        Daniel M. Hendricks
  * GitHub:        https://github.com/dmhendricks/php-combine-scripts
  */
 use MatthiasMullie\Minify;
-$version = '0.1.0';
+$version = '0.2.0';
 
 require( __DIR__ . '/vendor/autoload.php' );
 
 // Load environmental configuration
 if( file_exists( '.env' ) ) {
     $dotenv = \Dotenv\Dotenv::create(__DIR__);
-    $dotenv->load();    
+    $dotenv->load();
 }
 
 // Set variables
@@ -76,16 +76,17 @@ if( !$disable_minify ) {
         $output = $minifier->minify();
     }
 
-    $output = "/**\n * Combined by php-combine-scripts v{$version}.\n * More information: https://github.com/dmhendricks/php-combine-scripts\n */\n" . $output;
-
-
 }
 
-// Send to browser
+// Add header to result
+$output = sprintf( "/**\n * %s by php-combine-scripts v%s.\n * More information: https://github.com/dmhendricks/php-combine-scripts\n */\n%s", $disable_minify ? 'Combined' : 'Minified', $version, $output );
+
+// Set content type
 $content_type = 'text/plain';
 if( in_array( $type, [ 'js', 'css' ] ) ) {
     $content_type = $type == 'js' ? 'text/javascript' : 'text/css';
 }
 
+// Output to browser
 header( "Content-Type: {$content_type}" );
 echo $output;
