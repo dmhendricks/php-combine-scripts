@@ -7,6 +7,10 @@
 
 A simple PHP script to combine and minify multiple JS or CSS files passed via URI, inspired by [jsDelivr](https://www.jsdelivr.com/features/?utm_source=github.com&utm_medium=referral&utm_content=link&utm_campaign=php-combine-scripts#combine).
 
+It was created for when you have multiple scripts at a static/CDN domain, allowing you to pick and bundle different libraries based on your current needs.
+
+Generally, it is best to combine multiple assets into bundles using a task runner such as [webpack](https://webpack.js.org/?utm_source=github.com&utm_medium=referral&utm_content=link&utm_campaign=php-combine-scripts) or [Gulp](https://gulpjs.com/?utm_source=github.com&utm_medium=referral&utm_content=link&utm_campaign=php-combine-scripts), but it can be handy depending on your use case.
+
 ## Setup
 
 1. Clone or unzip the files to a directory off of your web root. For example, `/combine/`. Change to that directory.
